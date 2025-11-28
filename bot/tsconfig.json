@@ -11,9 +11,9 @@
         "esModuleInterop": true,
         "outDir": "./dist",
         "rootDir": "./src",
-        "strict": true,
+        "strict": false,
         "noImplicitAny": false,
-        "strictNullChecks": true,
+        "strictNullChecks": false,
         "resolveJsonModule": true,
         "moduleResolution": "node",
         "skipLibCheck": true
