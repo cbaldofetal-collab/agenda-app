@@ -1,0 +1,692 @@
+{
+  "settings": {
+    "languages": [
+      "pt"
+    ],
+    "forceNER": true,
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "pt"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "pt": {
+        "settings": {
+          "locale": "pt",
+          "trainByDomain": false,
+          "tag": "domain-manager-pt",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "ola": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "oi": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "bom,dia": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "boa,tard": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "boa,noit": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "agend,compromiss": {
+            "intent": "appointment.create",
+            "domain": "default"
+          },
+          "marc,reunia": {
+            "intent": "appointment.create",
+            "domain": "default"
+          },
+          "agend,nov": {
+            "intent": "appointment.create",
+            "domain": "default"
+          },
+          "algo,marc,quer": {
+            "intent": "appointment.create",
+            "domain": "default"
+          },
+          "agend,amanh,par": {
+            "intent": "appointment.create",
+            "domain": "default"
+          },
+          "consult,dia": {
+            "intent": "appointment.create",
+            "domain": "default"
+          },
+          "dia,exam": {
+            "intent": "appointment.create",
+            "domain": "default"
+          },
+          "amanh,dentist": {
+            "intent": "appointment.create",
+            "domain": "default"
+          },
+          "as,reunia": {
+            "intent": "appointment.create",
+            "domain": "default"
+          },
+          "consult,marc": {
+            "intent": "appointment.create",
+            "domain": "default"
+          },
+          "agend,exam": {
+            "intent": "appointment.create",
+            "domain": "default"
+          },
+          "agend,minh,ver": {
+            "intent": "appointment.list",
+            "domain": "default"
+          },
+          "compromiss,meus,qua": {
+            "intent": "appointment.list",
+            "domain": "default"
+          },
+          "hoj,o,par,que,tenh": {
+            "intent": "appointment.list",
+            "domain": "default"
+          },
+          "list,reunio": {
+            "intent": "appointment.list",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "greetings.hello": "default",
+          "appointment.create": "default",
+          "appointment.list": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "olá",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "oi",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "bom dia",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "boa tarde",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "boa noite",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "agendar compromisso",
+            "intent": "appointment.create"
+          },
+          {
+            "domain": "default",
+            "utterance": "marcar reunião",
+            "intent": "appointment.create"
+          },
+          {
+            "domain": "default",
+            "utterance": "novo agendamento",
+            "intent": "appointment.create"
+          },
+          {
+            "domain": "default",
+            "utterance": "quero marcar algo",
+            "intent": "appointment.create"
+          },
+          {
+            "domain": "default",
+            "utterance": "agendar para amanhã",
+            "intent": "appointment.create"
+          },
+          {
+            "domain": "default",
+            "utterance": "consulta dia",
+            "intent": "appointment.create"
+          },
+          {
+            "domain": "default",
+            "utterance": "exame dia",
+            "intent": "appointment.create"
+          },
+          {
+            "domain": "default",
+            "utterance": "dentista amanhã",
+            "intent": "appointment.create"
+          },
+          {
+            "domain": "default",
+            "utterance": "reunião às",
+            "intent": "appointment.create"
+          },
+          {
+            "domain": "default",
+            "utterance": "marcar consulta",
+            "intent": "appointment.create"
+          },
+          {
+            "domain": "default",
+            "utterance": "agendar exame",
+            "intent": "appointment.create"
+          },
+          {
+            "domain": "default",
+            "utterance": "ver minha agenda",
+            "intent": "appointment.list"
+          },
+          {
+            "domain": "default",
+            "utterance": "quais meus compromissos",
+            "intent": "appointment.list"
+          },
+          {
+            "domain": "default",
+            "utterance": "o que tenho para hoje",
+            "intent": "appointment.list"
+          },
+          {
+            "domain": "default",
+            "utterance": "listar reuniões",
+            "intent": "appointment.list"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "pt",
+              "tag": "nlu-pt",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "ola": 1,
+              "oi": 1,
+              "bom": 1,
+              "dia": 1,
+              "boa": 1,
+              "tard": 1,
+              "noit": 1,
+              "agend": 1,
+              "compromiss": 1,
+              "marc": 1,
+              "reunia": 1,
+              "nov": 1,
+              "quer": 1,
+              "algo": 1,
+              "par": 1,
+              "amanh": 1,
+              "consult": 1,
+              "exam": 1,
+              "dentist": 1,
+              "as": 1,
+              "ver": 1,
+              "minh": 1,
+              "qua": 1,
+              "meus": 1,
+              "o": 1,
+              "que": 1,
+              "tenh": 1,
+              "hoj": 1,
+              "list": 1,
+              "reunio": 1
+            },
+            "intents": {
+              "greetings.hello": 1,
+              "appointment.create": 1,
+              "appointment.list": 1
+            },
+            "intentFeatures": {
+              "greetings.hello": {
+                "ola": 1,
+                "oi": 1,
+                "bom": 1,
+                "dia": 1,
+                "boa": 1,
+                "tard": 1,
+                "noit": 1
+              },
+              "appointment.create": {
+                "agend": 1,
+                "compromiss": 1,
+                "marc": 1,
+                "reunia": 1,
+                "nov": 1,
+                "quer": 1,
+                "algo": 1,
+                "par": 1,
+                "amanh": 1,
+                "consult": 1,
+                "dia": 1,
+                "exam": 1,
+                "dentist": 1,
+                "as": 1
+              },
+              "appointment.list": {
+                "ver": 1,
+                "minh": 1,
+                "agend": 1,
+                "qua": 1,
+                "meus": 1,
+                "compromiss": 1,
+                "o": 1,
+                "que": 1,
+                "tenh": 1,
+                "par": 1,
+                "hoj": 1,
+                "list": 1,
+                "reunio": 1
+              }
+            },
+            "featuresToIntent": {
+              "ola": [
+                "greetings.hello"
+              ],
+              "oi": [
+                "greetings.hello"
+              ],
+              "bom": [
+                "greetings.hello"
+              ],
+              "dia": [
+                "greetings.hello",
+                "appointment.create"
+              ],
+              "boa": [
+                "greetings.hello"
+              ],
+              "tard": [
+                "greetings.hello"
+              ],
+              "noit": [
+                "greetings.hello"
+              ],
+              "agend": [
+                "appointment.create",
+                "appointment.list"
+              ],
+              "compromiss": [
+                "appointment.create",
+                "appointment.list"
+              ],
+              "marc": [
+                "appointment.create"
+              ],
+              "reunia": [
+                "appointment.create"
+              ],
+              "nov": [
+                "appointment.create"
+              ],
+              "quer": [
+                "appointment.create"
+              ],
+              "algo": [
+                "appointment.create"
+              ],
+              "par": [
+                "appointment.create",
+                "appointment.list"
+              ],
+              "amanh": [
+                "appointment.create"
+              ],
+              "consult": [
+                "appointment.create"
+              ],
+              "exam": [
+                "appointment.create"
+              ],
+              "dentist": [
+                "appointment.create"
+              ],
+              "as": [
+                "appointment.create"
+              ],
+              "ver": [
+                "appointment.list"
+              ],
+              "minh": [
+                "appointment.list"
+              ],
+              "qua": [
+                "appointment.list"
+              ],
+              "meus": [
+                "appointment.list"
+              ],
+              "o": [
+                "appointment.list"
+              ],
+              "que": [
+                "appointment.list"
+              ],
+              "tenh": [
+                "appointment.list"
+              ],
+              "hoj": [
+                "appointment.list"
+              ],
+              "list": [
+                "appointment.list"
+              ],
+              "reunio": [
+                "appointment.list"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "pt",
+                "tag": "nlu-pt",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "ola",
+                "oi",
+                "bom",
+                "dia",
+                "boa",
+                "tard",
+                "noit",
+                "agend",
+                "compromiss",
+                "marc",
+                "reunia",
+                "nov",
+                "quer",
+                "algo",
+                "par",
+                "amanh",
+                "consult",
+                "exam",
+                "dentist",
+                "as",
+                "ver",
+                "minh",
+                "qua",
+                "meus",
+                "o",
+                "que",
+                "tenh",
+                "hoj",
+                "list",
+                "reunio"
+              ],
+              "intents": [
+                "greetings.hello",
+                "appointment.create",
+                "appointment.list"
+              ],
+              "perceptrons": [
+                [
+                  9.34605884552002,
+                  9.345410346984863,
+                  9.338946342468262,
+                  -0.003246262902393937,
+                  6.231895923614502,
+                  3.116222858428955,
+                  3.115692615509033,
+                  -3.542353868484497,
+                  -2.2078890800476074,
+                  -2.5564475059509277,
+                  -2.9902167320251465,
+                  -1.3967177867889404,
+                  -1.1907203197479248,
+                  -1.1907203197479248,
+                  -1.316963791847229,
+                  -2.6743085384368896,
+                  -4.930237293243408,
+                  -4.927277565002441,
+                  -2.262401580810547,
+                  -1.9464160203933716,
+                  -0.6973398923873901,
+                  -0.6973398923873901,
+                  -1.3645594120025635,
+                  -1.3645594120025635,
+                  -0.9050568342208862,
+                  -0.9050568342208862,
+                  -0.9050568342208862,
+                  -0.9050568342208862,
+                  -2.4682271480560303,
+                  -2.4682271480560303,
+                  4.937256767865549
+                ],
+                [
+                  -3.7379150390625,
+                  -3.7357404232025146,
+                  -8.51959228515625,
+                  4.955538272857666,
+                  -2.5483250617980957,
+                  -1.2979726791381836,
+                  -1.230546236038208,
+                  5.833584308624268,
+                  4.481290340423584,
+                  4.6469244956970215,
+                  5.953121185302734,
+                  4.618384838104248,
+                  2.95855975151062,
+                  2.95855975151062,
+                  -0.8842781186103821,
+                  5.53997278213501,
+                  5.778802394866943,
+                  5.14314603805542,
+                  5.0116963386535645,
+                  4.55675745010376,
+                  -5.0031962394714355,
+                  -5.0031962394714355,
+                  -4.071112155914307,
+                  -4.071112155914307,
+                  -1.2542929649353027,
+                  -1.2542929649353027,
+                  -1.2542929649353027,
+                  -1.2542929649353027,
+                  -2.0141992568969727,
+                  -2.0141992568969727,
+                  3.734143492770224
+                ],
+                [
+                  -1.9364978075027466,
+                  -1.9336973428726196,
+                  -0.7594766020774841,
+                  -1.386731743812561,
+                  -1.4553221464157104,
+                  -0.7437316179275513,
+                  -0.6895193457603455,
+                  -2.1127352714538574,
+                  0.19199958443641663,
+                  -1.268876075744629,
+                  -1.2191720008850098,
+                  -1.0730664730072021,
+                  -0.4272399842739105,
+                  -0.4272399842739105,
+                  1.1286603212356567,
+                  -2.0109455585479736,
+                  -0.691525936126709,
+                  -0.9484829902648926,
+                  -0.3305151164531708,
+                  -0.7315267324447632,
+                  7.2308125495910645,
+                  7.2308125495910645,
+                  6.078283786773682,
+                  6.078283786773682,
+                  2.8061373233795166,
+                  2.8061373233795166,
+                  2.8061373233795166,
+                  2.8061373233795166,
+                  6.176495552062988,
+                  6.176495552062988,
+                  1.9324771354124908
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "pt",
+        "olá"
+      ],
+      [
+        "pt",
+        "oi"
+      ],
+      [
+        "pt",
+        "bom dia"
+      ],
+      [
+        "pt",
+        "boa tarde"
+      ],
+      [
+        "pt",
+        "boa noite"
+      ],
+      [
+        "pt",
+        "agendar compromisso"
+      ],
+      [
+        "pt",
+        "marcar reunião"
+      ],
+      [
+        "pt",
+        "novo agendamento"
+      ],
+      [
+        "pt",
+        "quero marcar algo"
+      ],
+      [
+        "pt",
+        "agendar para amanhã"
+      ],
+      [
+        "pt",
+        "consulta dia"
+      ],
+      [
+        "pt",
+        "exame dia"
+      ],
+      [
+        "pt",
+        "dentista amanhã"
+      ],
+      [
+        "pt",
+        "reunião às"
+      ],
+      [
+        "pt",
+        "marcar consulta"
+      ],
+      [
+        "pt",
+        "agendar exame"
+      ],
+      [
+        "pt",
+        "ver minha agenda"
+      ],
+      [
+        "pt",
+        "quais meus compromissos"
+      ],
+      [
+        "pt",
+        "o que tenho para hoje"
+      ],
+      [
+        "pt",
+        "listar reuniões"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "pt": {
+        "greetings.hello": [
+          {
+            "answer": "Olá! Como posso ajudar com sua agenda hoje?"
+          }
+        ],
+        "appointment.create": [
+          {
+            "answer": "Claro, qual o título do compromisso e o horário?"
+          }
+        ],
+        "appointment.list": [
+          {
+            "answer": "Vou verificar sua agenda. Um momento..."
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}
