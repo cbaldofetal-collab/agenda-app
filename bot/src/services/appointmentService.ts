@@ -225,11 +225,14 @@ export class AppointmentService {
             }
         }
 
-        // 4. Detectar hora - DEVE ter "h" ou "horas" ou ":" para ser considerado hora
-        const timeRegex = /(?:às|as)?\s*(\d{1,2})(?:h(?:oras?)?|:00|\s+horas?)/i;
+        // 4. Detectar hora - aceita vários formatos: "10h", "10 horas", "às 10", "as 14"
+        const timeRegex = /(?:às|as|ate|até)?\s*(\d{1,2})\s*(?:h(?:oras?)?|:00|\s+horas?)?/i;
         const timeMatch = lowerText.match(timeRegex);
 
-        if (timeMatch) {
+        // Validar se realmente parece ser hora (não pegar números soltos como dias)
+        const seemsLikeTime = lowerText.match(/(?:às|as|hora|h\b)/i);
+
+        if (timeMatch && seemsLikeTime) {
             const hour = parseInt(timeMatch[1]);
 
             if (hour >= 0 && hour <= 23) {
@@ -244,11 +247,11 @@ export class AppointmentService {
         }
 
         // Se temos data mas não hora, retornar null para forçar nova entrada
-        if (hasDate && !timeMatch) {
+        if (hasDate && !seemsLikeTime) {
             return null;
         }
 
-        return hasDate || timeMatch ? targetDate : null;
+        return hasDate || (timeMatch && seemsLikeTime) ? targetDate : null;
     }
 }
 
