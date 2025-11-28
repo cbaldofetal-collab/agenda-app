@@ -15,7 +15,8 @@
         "noImplicitAny": false,
         "strictNullChecks": true,
         "resolveJsonModule": true,
-        "moduleResolution": "node"
+        "moduleResolution": "node",
+        "skipLibCheck": true
     },
     "include": [
         "src/**/*"
