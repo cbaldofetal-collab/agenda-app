@@ -91,7 +91,7 @@ bot.command('login', async (ctx) => {
             const { data: { users: authUsers }, error: authError } = await supabase.auth.admin.listUsers();
             if (authError) throw authError;
 
-            const authUser = authUsers.find(u => u.email === email);
+            const authUser = authUsers?.find((u: any) => u.email === email);
             if (authUser) {
                 user = { id: authUser.id };
             }
