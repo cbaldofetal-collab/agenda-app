@@ -86,15 +86,15 @@ bot.command('login', async (ctx) => {
             .single();
 
         if (!user) {
-            // Se não achar em users, tenta profiles se tiver email lá (schema diz que profile tem user_id, mas email está em users)
-            // Vamos tentar auth.admin se tivermos a chave de serviço (que temos)
-            const { data: { users: authUsers }, error: authError } = await supabase.auth.admin.listUsers();
-            if (authError) throw authError;
+            // TEMPORARIAMENTE DESABILITADO PARA EVITAR ERRO DE BUILD
+            // const { data: { users: authUsers }, error: authError } = await supabase.auth.admin.listUsers();
+            // if (authError) throw authError;
+            // const authUser = authUsers?.find((u: any) => u.email === email);
+            // if (authUser) {
+            //     user = { id: authUser.id };
+            // }
 
-            const authUser = authUsers?.find((u: any) => u.email === email);
-            if (authUser) {
-                user = { id: authUser.id };
-            }
+            return ctx.reply('Funcionalidade de login temporariamente desabilitada. Use o app web para vincular sua conta.');
         }
 
         if (!user) {
